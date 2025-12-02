@@ -12,14 +12,21 @@ This server exposes the following tools to MCP clients (like Claude, Cursor, etc
 - `get-figma-comments`: Get comments from a Figma file
 
 ### Jira
+- `list-jira-projects`: List all accessible Jira projects
+- `list-project-issues`: List issues in a specific Jira project
 - `get-jira-issue`: Get details of a Jira issue
 - `create-jira-issue`: Create a new Jira issue
 - `search-jira-issues`: Search for Jira issues using JQL
+- `get-my-active-jira-tasks`: Get a list of active Jira tasks assigned to the current user
+- `get-jira-api`: Execute custom Jira API requests
 
 ### GitLab
 - `get-gitlab-project`: Get details of a GitLab project
 - `list-gitlab-issues`: List issues in a GitLab project
 - `list-gitlab-merge-requests`: List merge requests in a GitLab project
+- `crawl-gitlab`: Crawl and index GitLab projects
+- `search-gitlab-context`: Search within crawled GitLab projects
+- `get-gitlab-file`: Get content of a file from GitLab
 
 ## Setup
 
@@ -53,8 +60,12 @@ This server exposes the following tools to MCP clients (like Claude, Cursor, etc
 ## Usage with MCP Clients
 
 ### Claude Desktop / MCP Inspector
-You can use the [MCP Inspector](https://github.com/modelcontextprotocol/inspector) to test the server:
+You can use the [MCP Inspector](https://github.com/modelcontextprotocol/inspector) to test the server. Make sure to use the `--stdio` flag if running directly:
 
+```bash
+npx @modelcontextprotocol/inspector node dist/index.js --stdio
+```
+Or connect to the running HTTP server:
 ```bash
 npx @modelcontextprotocol/inspector
 ```

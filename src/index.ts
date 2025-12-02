@@ -52,8 +52,8 @@ async function main() {
 
         const PORT = config.PORT;
         app.listen(PORT, () => {
-            console.log(`PM7 MCP Server running on http://localhost:${PORT}`);
-            console.log(`MCP Endpoint: http://localhost:${PORT}/mcp`);
+            console.error(`PM7 MCP Server running on http://localhost:${PORT}`);
+            console.error(`MCP Endpoint: http://localhost:${PORT}/mcp`);
         });
     }
 }
